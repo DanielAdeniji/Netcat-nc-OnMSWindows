@@ -10,6 +10,7 @@ git add compileUsingMicrosoftVisualStudio.cmd
 
 git add makefile
 git add makewin.cmd
+git add makewinCustomized.cmd
 
 git add nc.exe
 git add nc.pdb
