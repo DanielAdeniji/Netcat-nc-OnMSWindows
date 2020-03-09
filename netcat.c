@@ -33,7 +33,10 @@
 	dadeniji 2020-01-25th
 	Added WIN32
 */
-#define WIN32
+#ifndef WIN32
+	#define WIN32
+#endif
+
 #include "generic.h"		/* same as with L5, skey, etc */
 
 #ifdef WIN32
@@ -92,8 +95,18 @@
 
 #ifdef WIN32
 #include "getopt.h"
-#define sleep			_sleep
+//C++: sleep() obsolete... so what's its successor?
+//https://forums.techguy.org/threads/c-sleep-obsolete-so-whats-its-successor.220086/
+//#define sleep			_sleep
+
+#define sleep			Sleep
+
+//2020-03-0
+//dadeniji conditional define strcasecmp
+#ifndef strcasecmp
 #define strcasecmp		strcmpi
+#endif
+
 #define EADDRINUSE		WSAEADDRINUSE
 #define ETIMEDOUT		WSAETIMEDOUT
 #define ECONNREFUSED	WSAECONNREFUSED
@@ -1171,7 +1184,11 @@ dol_err:
    Use the time delay between writes if given, otherwise use the "tcp ping"
    trick for getting the RTT.  [I got that idea from pluvius, and warped it.]
    Return either the original fd, or clean up and return -1. */
-udptest (fd, where)
+   
+//2020-03-09 10:34 AM
+//dadeniji added return type int
+//udptest (fd, where)
+int udptest (fd, where)
   int fd;
   IA * where;
 {
@@ -1661,7 +1678,10 @@ Debug (("wrote %d to net, errno %d", rr, errno))
 
 /* main :
    now we pull it all together... */
-main (argc, argv)
+//2020-03-09 10:34 AM
+//dadeniji added return type int   
+//main (argc, argv)
+int main (argc, argv)
   int argc;
   char ** argv;
 {

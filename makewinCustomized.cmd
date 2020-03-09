@@ -36,6 +36,8 @@ if exist nc.exe del nc.exe
 
 "%COMPILER%" %COMPILE_OPTIONS% netcat.c
 
-"%COMPILER%" getopt.o doexec.o netcat.o --output nc.exe -Wl,-V -lkernel32 -luser32 -lwinmm -lws2_32 -lwsock32
+rem "%COMPILER%" getopt.o doexec.o netcat.o --output nc.exe -Wl,-L"%LIB_DIR%",-lkernel32,-luser32,-lwinmm,-lws2_32
+
+"%COMPILER%" getopt.o doexec.o netcat.o --output nc.exe -lkernel32 -luser32 -lwinmm -lws2_32
 
 endlocal
