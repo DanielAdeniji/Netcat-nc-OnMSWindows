@@ -22,3 +22,12 @@ git add license.txt
 git add readme.txt
 
 rem git add readme.rodneybeede.txt
+
+rem added on 2024-12-12 08:37 am
+git add git*.cmd
+
+git add compileUsingMicrosoftVisualStudio.cmd
+
+git add compileUsingMicrosoftVisualStudio.v2017.cmd
+
+git add compileUsingMicrosoftVisualStudio.v2019.cmd

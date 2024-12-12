@@ -1,6 +1,8 @@
 setlocal
 
-set "_compilerFolder=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\"
+rem set "_compilerFolder=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\"
+
+set "_compilerFolder=D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\"
 
 set "_compilerBinary=cl.exe"
 

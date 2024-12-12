@@ -94,23 +94,38 @@
 /* includes: */
 
 #ifdef WIN32
-#include "getopt.h"
-//C++: sleep() obsolete... so what's its successor?
-//https://forums.techguy.org/threads/c-sleep-obsolete-so-whats-its-successor.220086/
-//#define sleep			_sleep
 
-#define sleep			Sleep
+	#include "getopt.h"
+	//C++: sleep() obsolete... so what's its successor?
+	//https://forums.techguy.org/threads/c-sleep-obsolete-so-whats-its-successor.220086/
+	//#define sleep			_sleep
 
-//2020-03-0
-//dadeniji conditional define strcasecmp
-#ifndef strcasecmp
-#define strcasecmp		strcmpi
+	#define sleep			Sleep
+
+	//2020-03-0
+	//dadeniji conditional define strcasecmp
+	#ifndef strcasecmp
+	#define strcasecmp		strcmpi
+	#endif
+
+	/*
+		2024-12-12 dadeniji
+	*/
+
+	#ifndef EADDRINUSE
+		#define EADDRINUSE		WSAEADDRINUSE
+	#endif
+
+	#ifndef ETIMEDOUT
+		#define ETIMEDOUT		WSAETIMEDOUT
+	#endif
+	
+	#ifndef ECONNREFUSED
+		#define ECONNREFUSED	WSAECONNREFUSED
+	#endif
+	
 #endif
 
-#define EADDRINUSE		WSAEADDRINUSE
-#define ETIMEDOUT		WSAETIMEDOUT
-#define ECONNREFUSED	WSAECONNREFUSED
-#endif
 
 #ifndef WIN32
 #include <sys/time.h>		/* timeval, time_t */
